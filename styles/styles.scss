@@ -1,0 +1,179 @@
+@import'variables';
+@import'mixins';
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+html {
+      font-size: 16px;
+      box-sizing: border-box;
+      font-family: 'Josefin Sans';
+      background: url(/images/bg-pattern-desktop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+body{
+        
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 10% 33% 10% 47%;
+        grid-template-rows: 20% 45% 15% 20%;
+        row-gap: 1rem;
+        justify-content: stretch;
+      
+    }
+  
+h1{
+      padding: 0 3rem 1.5rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.9rem;
+      line-height: 4rem;
+      font-size: 3.7rem;
+      }
+      
+p{
+          color: $pink;
+          font-weight: 400;
+          line-height: 1.5rem;
+          font-size: 1rem;
+         padding: 0 3rem 0 0;
+          
+  }
+  .header {
+    height: 1.8rem;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin-top: 4rem;
+}
+
+footer{
+    grid-column-start: 2;
+    grid-column-end:  2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    align-self: center;
+
+    p{
+        font-size: 0.8rem;
+
+    }
+}
+
+
+.hero{
+    grid-column-start: 4;
+    grid-column-end:  4;
+    grid-row-start: 1;
+    grid-row-end: span 4;
+    background-image: url(/images/hero-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
+    min-height: 100vh;
+
+    
+}
+
+.text{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-self: center;
+    
+    
+    
+    .title{
+        color : $pink;
+        font-weight: 300;
+    }
+}
+
+.form{
+    grid-column-start: 2;
+    grid-column-end:  2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    align-self: start;
+
+    //GRID LAYOUT AS A PARENT
+    display: grid;
+    grid-template-columns: 65% 5rem;
+    grid-template-rows: 20% 80%;
+
+    input{
+        border-radius: 30px;
+        background: $linear;
+        border: 1px solid $pink;
+        text-align: left;
+        height: 3.5rem;
+        padding-left: 2rem;
+        
+        //GRID LAYOUT
+        grid-column-start: 1;
+        grid-column-end:  span 2;
+        grid-row-start: 1;
+        grid-row-end: span 1; 
+        align-self: center;
+        
+        &:focus {
+            outline: none;
+            &:invalid{
+                border: 2px solid red;
+                background: url('/images/icon-error.svg') no-repeat 75% 50%;
+                } 
+            };
+
+        &:valid{
+                outline: none;
+                };
+
+        &::placeholder{
+            color: $pink;
+            opacity: 0.6;
+            font-weight: 600;
+            letter-spacing: 0.08rem;
+            };
+
+        select:focus{
+        outline: none;
+        };  
+
+        opacity: 0.6;
+            };    
+
+        button {
+            border-radius: 30px;
+            height: 3.5rem;
+            width: 6rem;
+            border: none;
+            background: $linearSec;
+            box-shadow: 0px 5px 25px rgba(249,98,98, 0.4);
+            outline: none;
+            cursor: pointer;
+            grid-column-start: 2;
+            grid-column-end:  2;
+            grid-row-start: 1;
+            grid-row-end: span 1;
+            align-self: center;
+            z-index: 1;
+            }
+    
+    .error{
+        padding: 2rem;
+        font-size: 80%;
+        width: 80%;
+        color: $softRed;
+        border-radius: 0 0 5px 5px;
+    
+            .active{
+            padding: 0.3rem;
+            }
+        }
+}
+}

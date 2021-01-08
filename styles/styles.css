@@ -1,0 +1,226 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Josefin Sans';
+  background: url(/images/bg-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+html body {
+  min-height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 33% 10% 47%;
+      grid-template-columns: 10% 33% 10% 47%;
+  -ms-grid-rows: 20% 45% 15% 20%;
+      grid-template-rows: 20% 45% 15% 20%;
+  row-gap: 1rem;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+html h1 {
+  padding: 0 3rem 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.9rem;
+  line-height: 4rem;
+  font-size: 3.7rem;
+}
+
+html p {
+  color: #ce9797;
+  font-weight: 400;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  padding: 0 3rem 0 0;
+}
+
+html .header {
+  height: 1.8rem;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 1;
+  margin-top: 4rem;
+}
+
+html footer {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+html footer p {
+  font-size: 0.8rem;
+}
+
+html .hero {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+  background-image: url(/images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  min-height: 100vh;
+}
+
+html .text {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+html .text .title {
+  color: #ce9797;
+  font-weight: 300;
+}
+
+html .form {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 3;
+  -ms-grid-row-align: start;
+      align-self: start;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65% 5rem;
+      grid-template-columns: 65% 5rem;
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
+}
+
+html .form input {
+  border-radius: 30px;
+  background: linear-gradient(135deg, white, #fff5f5);
+  border: 1px solid #ce9797;
+  text-align: left;
+  height: 3.5rem;
+  padding-left: 2rem;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 1;
+      grid-row-end: span 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 0.6;
+}
+
+html .form input:focus {
+  outline: none;
+}
+
+html .form input:focus:invalid {
+  border: 2px solid red;
+  background: url("/images/icon-error.svg") no-repeat 75% 50%;
+}
+
+html .form input:valid {
+  outline: none;
+}
+
+html .form input::-webkit-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+html .form input:-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+html .form input::-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+html .form input::placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+html .form input select:focus {
+  outline: none;
+}
+
+html .form button {
+  border-radius: 30px;
+  height: 3.5rem;
+  width: 6rem;
+  border: none;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  -webkit-box-shadow: 0px 5px 25px rgba(249, 98, 98, 0.4);
+          box-shadow: 0px 5px 25px rgba(249, 98, 98, 0.4);
+  outline: none;
+  cursor: pointer;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 1;
+      grid-row-end: span 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  z-index: 1;
+}
+
+html .form .error {
+  padding: 2rem;
+  font-size: 80%;
+  width: 80%;
+  color: #f96262;
+  border-radius: 0 0 5px 5px;
+}
+
+html .form .error .active {
+  padding: 0.3rem;
+}
+/*# sourceMappingURL=styles.css.map */
