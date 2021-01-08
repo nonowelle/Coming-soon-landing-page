@@ -231,20 +231,25 @@ html .form .error .active {
   html body {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    -ms-grid-rows: 10% 25% 45% 10% 10%;
-        grid-template-rows: 10% 25% 45% 10% 10%;
+    -ms-grid-rows: 10% 25% 45% 20%;
+        grid-template-rows: 10% 25% 45% 20%;
     background-image: linear-gradient(135deg, white, #fff5f5);
+    background-size: cover;
+    background-repeat: repeat;
     min-width: 100vw;
   }
   html body footer {
-    -ms-grid-row: 5;
-        grid-row-start: 5;
+    -ms-grid-row: 4;
+        grid-row-start: 4;
     -ms-grid-row-span: 1;
         grid-row-end: span 1;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 1;
     text-align: center;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
   }
   html body footer p {
     font-size: 0.5rem;
@@ -261,7 +266,7 @@ html .form .error .active {
     font-weight: 400;
     line-height: 1.3rem;
     font-size: 1rem;
-    padding: 1rem 0;
+    padding: 0;
   }
   html body .header {
     -ms-grid-row: 1;

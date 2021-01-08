@@ -180,17 +180,20 @@ p{
 
         body{
             grid-template-columns: 100%;
-            grid-template-rows: 10% 25% 45% 10% 10%;
+            grid-template-rows: 10% 25% 45% 20%;
             background-image: $linear;
+            background-size: cover;
+            background-repeat: repeat;
             min-width: 100vw;
             
 
             footer{
-                grid-row-start: 5;
+                grid-row-start: 4;
                 grid-row-end: span 1;
                 grid-column-start: 1;
                 grid-column-end: 1;
                 text-align: center;
+                align-self: end;
                 
                 p{
                     font-size: 0.5rem;
@@ -206,11 +209,11 @@ p{
                 padding: 0;
                 }
     
-                p{
+            p{
                     font-weight: 400;
                     line-height: 1.3rem;
                     font-size: 1rem;
-                    padding: 1rem 0;
+                    padding: 0;
                        
             }
             
