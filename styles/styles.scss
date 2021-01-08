@@ -11,19 +11,32 @@ html {
       font-size: 16px;
       box-sizing: border-box;
       font-family: 'Josefin Sans';
-      background: url(/images/bg-pattern-desktop.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
+ 
 
 body{
-        
         min-height: 100%;
         display: grid;
         grid-template-columns: 10% 33% 10% 47%;
         grid-template-rows: 20% 45% 15% 20%;
         row-gap: 1rem;
         justify-content: stretch;
-      
+        align-self: stretch;
+        background: url(/images/bg-pattern-desktop.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        footer{
+            grid-column-start: 2;
+            grid-column-end:  2;
+            grid-row-start: 4;
+            grid-row-end: 4;
+            align-self: center;
+        
+            p{
+                font-size: 0.8rem;
+            }
+        }
+    
     }
   
 h1{
@@ -39,8 +52,7 @@ p{
           font-weight: 400;
           line-height: 1.5rem;
           font-size: 1rem;
-         padding: 0 3rem 0 0;
-          
+         padding: 0 3rem 0 0;       
   }
   .header {
     height: 1.8rem;
@@ -51,32 +63,17 @@ p{
     margin-top: 4rem;
 }
 
-footer{
-    grid-column-start: 2;
-    grid-column-end:  2;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    align-self: center;
-
-    p{
-        font-size: 0.8rem;
-
-    }
-}
-
-
 .hero{
     grid-column-start: 4;
-    grid-column-end:  4;
+    grid-column-end:  span 1;
     grid-row-start: 1;
     grid-row-end: span 4;
     background-image: url(/images/hero-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    align-self: center;
+    align-self: start;
     min-height: 100vh;
 
-    
 }
 
 .text{
@@ -85,9 +82,6 @@ footer{
     grid-row-start: 2;
     grid-row-end: 2;
     align-self: center;
-    
-    
-    
     .title{
         color : $pink;
         font-weight: 300;
@@ -103,7 +97,7 @@ footer{
 
     //GRID LAYOUT AS A PARENT
     display: grid;
-    grid-template-columns: 65% 5rem;
+    grid-template-columns: 65% 4rem;
     grid-template-rows: 20% 80%;
 
     input{
@@ -150,7 +144,7 @@ footer{
         button {
             border-radius: 30px;
             height: 3.5rem;
-            width: 6rem;
+            width: 5rem;
             border: none;
             background: $linearSec;
             box-shadow: 0px 5px 25px rgba(249,98,98, 0.4);
@@ -175,5 +169,107 @@ footer{
             padding: 0.3rem;
             }
         }
+    }
 }
+
+
+//MEDIA QUERIES
+@media screen and (max-width: 800px) {
+
+    html{
+
+        body{
+            grid-template-columns: 100%;
+            grid-template-rows: 10% 25% 45% 10% 10%;
+            background-image: $linear;
+            min-width: 100vw;
+            
+
+            footer{
+                grid-row-start: 5;
+                grid-row-end: span 1;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                text-align: center;
+                
+                p{
+                    font-size: 0.5rem;
+                }
+            }
+
+            h1{
+                text-transform: uppercase;
+                letter-spacing: 0.3rem;
+                line-height: 3rem;
+                font-size: 2.5rem;
+                text-align: center;
+                padding: 0;
+                }
+    
+                p{
+                    font-weight: 400;
+                    line-height: 1.3rem;
+                    font-size: 1rem;
+                    padding: 1rem 0;
+                       
+            }
+            
+        
+            .header{
+                grid-row-start: 1;
+                grid-row-end: span 1;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                margin-left: 2rem;
+                margin-top: 1rem;
+                align-self: center;
+            }
+    
+            .hero{
+                grid-row-start: 2;
+                grid-row-end: span 1;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                background-size: cover;
+                background-image: url(/images/hero-mobile.jpg);
+                align-self: start;
+                min-height: 30vh;
+                    
+            }
+    
+            .text{
+                grid-row-start: 3;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                margin-left: 3.5rem;
+                margin-right: 3.5rem;
+                margin-top: 2rem;
+                text-align: center;
+                align-self: center;
+            }
+
+            .form{
+                grid-row-start: 4;
+                grid-row-end:  span 1;
+                grid-column-start: 1;
+                grid-column-end: span 1;
+                justify-self: center;
+                input{
+                    height: 3rem;
+                    
+            }
+                 button {
+                     border-radius: 30px;
+                     height: 3rem;
+                     width: 4rem;
+                }
+            }
+    
+            
+        }
+
+        
+    }
+    
 }

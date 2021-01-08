@@ -10,9 +10,6 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Josefin Sans';
-  background: url(/images/bg-pattern-desktop.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 html body {
@@ -27,6 +24,27 @@ html body {
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+  background: url(/images/bg-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+html body footer {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+html body footer p {
+  font-size: 0.8rem;
 }
 
 html h1 {
@@ -56,26 +74,11 @@ html .header {
   margin-top: 4rem;
 }
 
-html footer {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 2;
-  -ms-grid-row: 4;
-      grid-row-start: 4;
-  grid-row-end: 4;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-html footer p {
-  font-size: 0.8rem;
-}
-
 html .hero {
   -ms-grid-column: 4;
       grid-column-start: 4;
-  grid-column-end: 4;
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
   -ms-grid-row: 1;
       grid-row-start: 1;
   -ms-grid-row-span: 4;
@@ -83,9 +86,9 @@ html .hero {
   background-image: url(/images/hero-desktop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   min-height: 100vh;
 }
 
@@ -117,8 +120,8 @@ html .form {
       align-self: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 65% 5rem;
-      grid-template-columns: 65% 5rem;
+  -ms-grid-columns: 65% 4rem;
+      grid-template-columns: 65% 4rem;
   -ms-grid-rows: 20% 80%;
       grid-template-rows: 20% 80%;
 }
@@ -192,7 +195,7 @@ html .form input select:focus {
 html .form button {
   border-radius: 30px;
   height: 3.5rem;
-  width: 6rem;
+  width: 5rem;
   border: none;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   -webkit-box-shadow: 0px 5px 25px rgba(249, 98, 98, 0.4);
@@ -222,5 +225,107 @@ html .form .error {
 
 html .form .error .active {
   padding: 0.3rem;
+}
+
+@media screen and (max-width: 800px) {
+  html body {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 10% 25% 45% 10% 10%;
+        grid-template-rows: 10% 25% 45% 10% 10%;
+    background-image: linear-gradient(135deg, white, #fff5f5);
+    min-width: 100vw;
+  }
+  html body footer {
+    -ms-grid-row: 5;
+        grid-row-start: 5;
+    -ms-grid-row-span: 1;
+        grid-row-end: span 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
+    text-align: center;
+  }
+  html body footer p {
+    font-size: 0.5rem;
+  }
+  html body h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 0;
+  }
+  html body p {
+    font-weight: 400;
+    line-height: 1.3rem;
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+  html body .header {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-row-span: 1;
+        grid-row-end: span 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  html body .hero {
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-row-span: 1;
+        grid-row-end: span 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
+    background-size: cover;
+    background-image: url(/images/hero-mobile.jpg);
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    min-height: 30vh;
+  }
+  html body .text {
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 3;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  html body .form {
+    -ms-grid-row: 4;
+        grid-row-start: 4;
+    -ms-grid-row-span: 1;
+        grid-row-end: span 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 1;
+        grid-column-end: span 1;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  html body .form input {
+    height: 3rem;
+  }
+  html body .form button {
+    border-radius: 30px;
+    height: 3rem;
+    width: 4rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
