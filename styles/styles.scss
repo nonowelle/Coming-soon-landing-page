@@ -11,57 +11,114 @@ html {
       font-size: 16px;
       box-sizing: border-box;
       font-family: 'Josefin Sans';
- 
+      min-height: 100%;
+}
 
 body{
         min-height: 100%;
         display: grid;
         grid-template-columns: 10% 33% 10% 47%;
         grid-template-rows: 20% 45% 15% 20%;
-        row-gap: 1rem;
-        justify-content: stretch;
-        align-self: stretch;
+        row-gap: 1rem;  
         background: url(/images/bg-pattern-desktop.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        
-        footer{
-            grid-column-start: 2;
-            grid-column-end:  2;
-            grid-row-start: 4;
-            grid-row-end: 4;
-            align-self: center;
-        
-            p{
-                font-size: 0.8rem;
-            }
-        }
+        justify-content: stretch;
+        align-self: stretch;
+    }
+
+footer{
+        grid-column-start: 2;
+        grid-column-end:  2;
+        grid-row-start: 4;
+        grid-row-end: 4;
+        align-self: center;
     
+        p{
+            font-size: 0.8rem;
+        }
     }
   
-h1{
+h1 {
       padding: 0 3rem 1.5rem 0;
       text-transform: uppercase;
       letter-spacing: 0.9rem;
       line-height: 4rem;
       font-size: 3.7rem;
-      }
+    }
       
-p{
+p  {
           color: $pink;
           font-weight: 400;
           line-height: 1.5rem;
           font-size: 1rem;
          padding: 0 3rem 0 0;       
-  }
-  .header {
+    }
+
+button {
+    @include btn;
+    grid-column-start: 2;
+    grid-column-end:  2;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    align-self: center;
+    z-index: 1;
+
+    &:hover{
+        background: $hover;
+    }
+}
+
+input{
+    border-radius: 2rem;
+    background: $linear;
+    border: 1px solid $pink;
+    text-align: left;
+    height: 3.5rem;
+    padding-left: 2rem;
+        
+    //GRID LAYOUT
+    grid-column-start: 1;
+    grid-column-end:  span 2;
+    grid-row-start: 1;
+    grid-row-end: span 1; 
+    align-self: center;
+        
+    &:focus {
+        outline: none;
+
+        &:invalid{
+            border: 2px solid red;
+            background: url('/images/icon-error.svg') no-repeat 75% 50%;
+            } 
+        }
+
+    &:valid{
+            outline: none;
+            };
+
+    &::placeholder{
+        color: $pink;
+        opacity: 0.6;
+        font-weight: 600;
+        letter-spacing: 0.08rem;
+        };
+
+    select:focus{
+    outline: none;
+    };  
+
+    opacity: 0.6;
+        };  
+
+.header {
     height: 1.8rem;
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 1;
     margin-top: 4rem;
-}
+    }
 
 .hero{
     grid-column-start: 4;
@@ -73,7 +130,6 @@ p{
     background-repeat: no-repeat;
     align-self: start;
     min-height: 100vh;
-
 }
 
 .text{
@@ -82,6 +138,7 @@ p{
     grid-row-start: 2;
     grid-row-end: 2;
     align-self: center;
+    
     .title{
         color : $pink;
         font-weight: 300;
@@ -99,180 +156,128 @@ p{
     display: grid;
     grid-template-columns: 65% 4rem;
     grid-template-rows: 20% 80%;
+    }
 
-    input{
-        border-radius: 30px;
-        background: $linear;
-        border: 1px solid $pink;
-        text-align: left;
-        height: 3.5rem;
-        padding-left: 2rem;
-        
-        //GRID LAYOUT
-        grid-column-start: 1;
-        grid-column-end:  span 2;
-        grid-row-start: 1;
-        grid-row-end: span 1; 
-        align-self: center;
-        
-        &:focus {
-            outline: none;
-            &:invalid{
-                border: 2px solid red;
-                background: url('/images/icon-error.svg') no-repeat 75% 50%;
-                } 
-            };
+.error{
+    padding: 2rem 1rem;
+    font-size: 80%;
+    width: 80%;
+    color: $softRed;
+    border-radius: 0 0 5px 5px;
 
-        &:valid{
-                outline: none;
-                };
-
-        &::placeholder{
-            color: $pink;
-            opacity: 0.6;
-            font-weight: 600;
-            letter-spacing: 0.08rem;
-            };
-
-        select:focus{
-        outline: none;
-        };  
-
-        opacity: 0.6;
-            };    
-
-        button {
-            border-radius: 30px;
-            height: 3.5rem;
-            width: 5rem;
-            border: none;
-            background: $linearSec;
-            box-shadow: 0px 5px 25px rgba(249,98,98, 0.4);
-            outline: none;
-            cursor: pointer;
-            grid-column-start: 2;
-            grid-column-end:  2;
-            grid-row-start: 1;
-            grid-row-end: span 1;
-            align-self: center;
-            z-index: 1;
-            }
-    
-    .error{
-        padding: 2rem;
-        font-size: 80%;
-        width: 80%;
-        color: $softRed;
-        border-radius: 0 0 5px 5px;
-    
-            .active{
-            padding: 0.3rem;
-            }
+        .active{
+        padding: 0.3rem;
         }
     }
-}
 
 
 //MEDIA QUERIES
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 720px) {
 
-    html{
-
-        body{
-            grid-template-columns: 100%;
-            grid-template-rows: 10% 25% 45% 20%;
-            background-image: $linear;
-            background-size: cover;
-            background-repeat: repeat;
-            min-width: 100vw;
-            
-
-            footer{
-                grid-row-start: 4;
-                grid-row-end: span 1;
-                grid-column-start: 1;
-                grid-column-end: 1;
-                text-align: center;
-                align-self: end;
-                
-                p{
-                    font-size: 0.5rem;
-                }
-            }
-
-            h1{
-                text-transform: uppercase;
-                letter-spacing: 0.3rem;
-                line-height: 3rem;
-                font-size: 2.5rem;
-                text-align: center;
-                padding: 0;
-                }
-    
-            p{
-                    font-weight: 400;
-                    line-height: 1.3rem;
-                    font-size: 1rem;
-                    padding: 0;
-                       
-            }
-            
-        
-            .header{
-                grid-row-start: 1;
-                grid-row-end: span 1;
-                grid-column-start: 1;
-                grid-column-end: 1;
-                margin-left: 2rem;
-                margin-top: 1rem;
-                align-self: center;
-            }
-    
-            .hero{
-                grid-row-start: 2;
-                grid-row-end: span 1;
-                grid-column-start: 1;
-                grid-column-end: 1;
-                background-size: cover;
-                background-image: url(/images/hero-mobile.jpg);
-                align-self: start;
-                min-height: 30vh;
-                    
-            }
-    
-            .text{
-                grid-row-start: 3;
-                grid-row-end: 3;
-                grid-column-start: 1;
-                grid-column-end: 1;
-                margin-left: 3.5rem;
-                margin-right: 3.5rem;
-                margin-top: 2rem;
-                text-align: center;
-                align-self: center;
-            }
-
-            .form{
-                grid-row-start: 4;
-                grid-row-end:  span 1;
-                grid-column-start: 1;
-                grid-column-end: span 1;
-                justify-self: center;
-                input{
-                    height: 3rem;
-                    
-            }
-                 button {
-                     border-radius: 30px;
-                     height: 3rem;
-                     width: 4rem;
-                }
-            }
-    
-            
-        }
-
-        
+    body{
+        @include bg-mobile;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 25% 45% 20%;
+        min-width: 100%;
     }
     
+    footer{
+        grid-row-start: 4;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        text-align: center;
+        align-self: center;
+        
+        p{
+            font-size: 0.5rem;
+        }
+    }
+
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.6rem;
+        line-height: 3rem;
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 2rem 0 0 0;
+    }
+
+    p   {
+            font-weight: 400;
+            line-height: 1.4rem;
+            font-size: 0.9rem;
+            padding: 1rem 0 0 0;
+                
+    }
+
+    input{
+        height: 3rem;
+        padding-left: 1rem;
+        font-weight: 300;
+        font-size: 0.8rem; 
+    }
+
+    button {
+        border-radius: 2rem;
+        height: 3rem;
+        width: 4rem;
+        justify-self: end;
+    }
+        
+    .header{
+        grid-row-start: 1;
+        grid-row-end: span 1;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        margin-left: 2rem;
+        margin-top: 1rem;
+        align-self: center;
+
+        img{
+            height: 80%;
+            width: auto;
+        }
+    }
+
+    .hero{
+        grid-row-start: 2;
+        grid-row-end: span 1;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        background-size: cover;
+        background-position: top;
+        background-image: url(/images/hero-mobile.jpg);
+        min-height: 30vh;
+    }
+
+    .text{
+        grid-row-start: 3;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        margin: 2rem 3rem;
+        text-align: center;
+        align-self: end;
+    }
+
+    .form{
+        grid-row-start: 4;
+        grid-row-end:  span 1;
+        grid-column-start: 1;
+        grid-column-end: span 1;
+        margin: 0 2.5rem;
+        //GRID LAYOUT AS A PARENT
+        grid-template-columns: 75% auto;
+    }
+
+    .error{
+        padding: 1.5rem 1rem;
+    }
 }
+            
+ 
+
+        
+    
+    

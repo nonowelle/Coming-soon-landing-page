@@ -10,9 +10,10 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Josefin Sans';
+  min-height: 100%;
 }
 
-html body {
+body {
   min-height: 100%;
   display: -ms-grid;
   display: grid;
@@ -21,17 +22,17 @@ html body {
   -ms-grid-rows: 20% 45% 15% 20%;
       grid-template-rows: 20% 45% 15% 20%;
   row-gap: 1rem;
+  background: url(/images/bg-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
   -ms-grid-row-align: stretch;
       align-self: stretch;
-  background: url(/images/bg-pattern-desktop.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-html body footer {
+footer {
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 2;
@@ -43,11 +44,11 @@ html body footer {
       align-self: center;
 }
 
-html body footer p {
+footer p {
   font-size: 0.8rem;
 }
 
-html h1 {
+h1 {
   padding: 0 3rem 1.5rem 0;
   text-transform: uppercase;
   letter-spacing: 0.9rem;
@@ -55,7 +56,7 @@ html h1 {
   font-size: 3.7rem;
 }
 
-html p {
+p {
   color: #ce9797;
   font-weight: 400;
   line-height: 1.5rem;
@@ -63,136 +64,7 @@ html p {
   padding: 0 3rem 0 0;
 }
 
-html .header {
-  height: 1.8rem;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 2;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 1;
-  margin-top: 4rem;
-}
-
-html .hero {
-  -ms-grid-column: 4;
-      grid-column-start: 4;
-  -ms-grid-column-span: 1;
-      grid-column-end: span 1;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-row-span: 4;
-      grid-row-end: span 4;
-  background-image: url(/images/hero-desktop.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-  min-height: 100vh;
-}
-
-html .text {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 2;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 2;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-html .text .title {
-  color: #ce9797;
-  font-weight: 300;
-}
-
-html .form {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 2;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
-  grid-row-end: 3;
-  -ms-grid-row-align: start;
-      align-self: start;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 65% 4rem;
-      grid-template-columns: 65% 4rem;
-  -ms-grid-rows: 20% 80%;
-      grid-template-rows: 20% 80%;
-}
-
-html .form input {
-  border-radius: 30px;
-  background: linear-gradient(135deg, white, #fff5f5);
-  border: 1px solid #ce9797;
-  text-align: left;
-  height: 3.5rem;
-  padding-left: 2rem;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  -ms-grid-column-span: 2;
-      grid-column-end: span 2;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-row-span: 1;
-      grid-row-end: span 1;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  opacity: 0.6;
-}
-
-html .form input:focus {
-  outline: none;
-}
-
-html .form input:focus:invalid {
-  border: 2px solid red;
-  background: url("/images/icon-error.svg") no-repeat 75% 50%;
-}
-
-html .form input:valid {
-  outline: none;
-}
-
-html .form input::-webkit-input-placeholder {
-  color: #ce9797;
-  opacity: 0.6;
-  font-weight: 600;
-  letter-spacing: 0.08rem;
-}
-
-html .form input:-ms-input-placeholder {
-  color: #ce9797;
-  opacity: 0.6;
-  font-weight: 600;
-  letter-spacing: 0.08rem;
-}
-
-html .form input::-ms-input-placeholder {
-  color: #ce9797;
-  opacity: 0.6;
-  font-weight: 600;
-  letter-spacing: 0.08rem;
-}
-
-html .form input::placeholder {
-  color: #ce9797;
-  opacity: 0.6;
-  font-weight: 600;
-  letter-spacing: 0.08rem;
-}
-
-html .form input select:focus {
-  outline: none;
-}
-
-html .form button {
+button {
   border-radius: 30px;
   height: 3.5rem;
   width: 5rem;
@@ -215,60 +87,205 @@ html .form button {
   z-index: 1;
 }
 
-html .form .error {
-  padding: 2rem;
+button:hover {
+  background: #f8bfbf;
+}
+
+input {
+  border-radius: 2rem;
+  background: linear-gradient(135deg, white, #fff5f5);
+  border: 1px solid #ce9797;
+  text-align: left;
+  height: 3.5rem;
+  padding-left: 2rem;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 1;
+      grid-row-end: span 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 0.6;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus:invalid {
+  border: 2px solid red;
+  background: url("/images/icon-error.svg") no-repeat 75% 50%;
+}
+
+input:valid {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+input:-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+input::-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+input::placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+input select:focus {
+  outline: none;
+}
+
+.header {
+  height: 1.8rem;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 1;
+  margin-top: 4rem;
+}
+
+.hero {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+  background-image: url(/images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  min-height: 100vh;
+}
+
+.text {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.text .title {
+  color: #ce9797;
+  font-weight: 300;
+}
+
+.form {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 3;
+  -ms-grid-row-align: start;
+      align-self: start;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65% 4rem;
+      grid-template-columns: 65% 4rem;
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
+}
+
+.error {
+  padding: 2rem 1rem;
   font-size: 80%;
   width: 80%;
   color: #f96262;
   border-radius: 0 0 5px 5px;
 }
 
-html .form .error .active {
+.error .active {
   padding: 0.3rem;
 }
 
-@media screen and (max-width: 800px) {
-  html body {
+@media screen and (max-width: 720px) {
+  body {
+    background-image: linear-gradient(135deg, white, #fff5f5);
+    background-size: cover;
+    background-repeat: repeat;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: 10% 25% 45% 20%;
         grid-template-rows: 10% 25% 45% 20%;
-    background-image: linear-gradient(135deg, white, #fff5f5);
-    background-size: cover;
-    background-repeat: repeat;
-    min-width: 100vw;
+    min-width: 100%;
   }
-  html body footer {
+  footer {
     -ms-grid-row: 4;
         grid-row-start: 4;
-    -ms-grid-row-span: 1;
-        grid-row-end: span 1;
+    grid-row-end: 4;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 1;
     text-align: center;
-    -ms-flex-item-align: end;
-        -ms-grid-row-align: end;
-        align-self: end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
-  html body footer p {
+  footer p {
     font-size: 0.5rem;
   }
-  html body h1 {
+  h1 {
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.6rem;
     line-height: 3rem;
     font-size: 2.5rem;
     text-align: center;
-    padding: 0;
+    padding: 2rem 0 0 0;
   }
-  html body p {
+  p {
     font-weight: 400;
-    line-height: 1.3rem;
-    font-size: 1rem;
-    padding: 0;
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+    padding: 1rem 0 0 0;
   }
-  html body .header {
+  input {
+    height: 3rem;
+    padding-left: 1rem;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  button {
+    border-radius: 2rem;
+    height: 3rem;
+    width: 4rem;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .header {
     -ms-grid-row: 1;
         grid-row-start: 1;
     -ms-grid-row-span: 1;
@@ -282,7 +299,11 @@ html .form .error .active {
         -ms-grid-row-align: center;
         align-self: center;
   }
-  html body .hero {
+  .header img {
+    height: 80%;
+    width: auto;
+  }
+  .hero {
     -ms-grid-row: 2;
         grid-row-start: 2;
     -ms-grid-row-span: 1;
@@ -291,28 +312,24 @@ html .form .error .active {
         grid-column-start: 1;
     grid-column-end: 1;
     background-size: cover;
+    background-position: top;
     background-image: url(/images/hero-mobile.jpg);
-    -ms-flex-item-align: start;
-        -ms-grid-row-align: start;
-        align-self: start;
     min-height: 30vh;
   }
-  html body .text {
+  .text {
     -ms-grid-row: 3;
         grid-row-start: 3;
     grid-row-end: 3;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 1;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-    margin-top: 2rem;
+    margin: 2rem 3rem;
     text-align: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
   }
-  html body .form {
+  .form {
     -ms-grid-row: 4;
         grid-row-start: 4;
     -ms-grid-row-span: 1;
@@ -321,16 +338,12 @@ html .form .error .active {
         grid-column-start: 1;
     -ms-grid-column-span: 1;
         grid-column-end: span 1;
-    -ms-grid-column-align: center;
-        justify-self: center;
+    margin: 0 2.5rem;
+    -ms-grid-columns: 75% auto;
+        grid-template-columns: 75% auto;
   }
-  html body .form input {
-    height: 3rem;
-  }
-  html body .form button {
-    border-radius: 30px;
-    height: 3rem;
-    width: 4rem;
+  .error {
+    padding: 1.5rem 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

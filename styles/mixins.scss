@@ -1,6 +1,19 @@
-@mixin flexCenter($direction){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
+
+
+
+@mixin btn{
+    border-radius: 30px;
+    height: 3.5rem;
+    width: 5rem;
+    border: none;
+    background: $linearSec;
+    box-shadow: 0px 5px 25px rgba(249,98,98, 0.4);
+    outline: none;
+    cursor: pointer;
+}
+
+@mixin bg-mobile {
+    background-image: $linear;
+    background-size: cover;
+    background-repeat: repeat;
 }
