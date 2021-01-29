@@ -3,7 +3,7 @@
 ![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
 
 ## General Info
-This landing page is my fourth Front-End Mentor challenge. Through this project, I learned the basis of SCSS and practice the grid-system. Here's the detail of what I had to reproduce : 
+This landing page is my fourth Front-End Mentor challenge. Through this project, I learned the basis of SCSS and practice the grid-system form validation. Here's the detail of what I had to reproduce : 
 
 > ### The challenge
 > Your challenge is to build out this coming soon page and get it looking as close to the design as possible.
